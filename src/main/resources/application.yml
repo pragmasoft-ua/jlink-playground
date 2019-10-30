@@ -1,0 +1,78 @@
+spring:
+    profiles:
+        active: development
+    application:
+        name: Jlink-Playground
+    datasource:
+        url: jdbc:postgresql:pdca
+        username: arium
+        password: qwerty14@$
+    jmx:
+        enabled: true
+    flyway:
+        enabled: false
+    jpa:
+        hibernate:
+          ddl-auto: none
+        show-sql: true
+        database: postgresql
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        open-in-view: false
+        generate-ddl: false
+
+# Logger configuration
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: INFO
+    org.hibernate: DEBUG
+# Server configuration
+server:
+  port: 8080
+  sessionTimeout: 30
+  
+management:
+    endpoints:
+        web:
+            base-path: /management
+            exposure:
+                include: ["configprops", "env", "health", "info", "threaddump", "logfile", "jhi-metrics", "prometheus" ]
+    endpoint:
+        health:
+            show-details: when-authorized
+        jhi-metrics:
+            enabled: true
+    info:
+        git:
+            mode: full
+    health:
+        mail:
+            enabled: false # When using the MailService, configure an SMTP server and set this to true
+    metrics:
+        export:
+            # Prometheus is the default metrics backend
+            prometheus:
+                enabled: true
+                step: 60
+        binders:
+            jvm:
+                enabled: true
+            processor:
+                enabled: true
+            uptime:
+                enabled: true
+            logback:
+                enabled: true
+            files:
+                enabled: true
+            integration:
+                enabled: true
+        distribution:
+            percentiles-histogram:
+                all: true
+            percentiles:
+                all: 0, 0.5, 0.75, 0.95, 0.99, 1.0
+        web:
+            server:
+                auto-time-requests: true
