@@ -10,7 +10,11 @@
 	</parent>
 	<groupId>ua.pragmasoft</groupId>
 	<artifactId>jlink-playground</artifactId>
+<<<<<<< HEAD
 	<version>1.0-SNAPSHOT</version>
+=======
+	<version>0.0.1-SNAPSHOT</version>
+>>>>>>> 2fe93686976ba30911e4c95791b8ee07ff0e33e7
 	<name>jlink-playground</name>
 	<description>Jlink playground project for Spring Boot</description>
 
@@ -102,7 +106,6 @@
                     </container>
                 </configuration>
             </plugin>
-			
 		</plugins>
 	</build>
 
