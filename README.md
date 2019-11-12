@@ -1,6 +1,14 @@
 # jlink-playground
 Playground project of minimized packaging of spring boot application
 
-## jlink command
+## Build
 
-`jlink --compress=2 -G --output target/jib-extra/jre --add-modules java.base,java.logging,java.xml,jdk.unsupported,java.sql,java.naming,java.desktop,java.management,java.security.jgss,java.instrument`
+`./mvnw clean package jib:dockerBuild`
+
+## Docker run
+
+`docker run -it --rm --name greeter -p 80:8080 488285037276.dkr.ecr.us-east-1.amazonaws.com/air/greeter`
+
+## Push
+
+`./mvnw clean package jib:build`

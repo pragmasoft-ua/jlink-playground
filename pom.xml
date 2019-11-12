@@ -79,24 +79,11 @@
                 <version>1.7.0</version>
                  <configuration>
                  	<from>
-                 		<image>gcr.io/distroless/base</image>
+                 		<image>pragmasoft/spring-boot-jre:amazoncorretto-11</image>
                  	</from>
                     <to>
-                        <image>jlinked</image>
+                        <image>488285037276.dkr.ecr.us-east-1.amazonaws.com/air/greeter</image>
                     </to>
-                    <extraDirectory>
-                    	<path>target/jib-extra</path>
-                    	<permissions>
-                    		<permission>
-	                    		<file>/jre/bin/java</file>
-	                    		<mode>755</mode>
-                    		</permission>
-                    		<permission>
-	                    		<file>/jre/bin/keytool</file>
-	                    		<mode>755</mode>
-                    		</permission>
-                    	</permissions>
-                    </extraDirectory>
                     <container>
                     	<entrypoint>/jre/bin/java,-cp,/app/resources:/app/classes:/app/libs/*,ua.pragmasoft.jlinkplayground.JlinkPlaygroundApplication</entrypoint>
                     </container>

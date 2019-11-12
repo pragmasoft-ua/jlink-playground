@@ -1,0 +1,17 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "greeter",
+      "image": "488285037276.dkr.ecr.us-east-1.amazonaws.com/air/greeter",
+      "essential": true,
+      "memoryReservation": 1536,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8080
+        }
+      ]
+    }
+  ]
+}

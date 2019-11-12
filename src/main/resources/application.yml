@@ -19,6 +19,10 @@ spring:
         database-platform: org.hibernate.dialect.PostgreSQLDialect
         open-in-view: false
         generate-ddl: false
+    security:
+        user:
+            name: user
+            password: pass
 
 # Logger configuration
 logging:
@@ -31,7 +35,8 @@ logging:
 server:
   port: 8080
   sessionTimeout: 30
-  
+
+# Management configuration
 management:
     endpoints:
         web:
