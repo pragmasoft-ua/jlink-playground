@@ -4,9 +4,9 @@ spring:
     application:
         name: Jlink-Playground
     datasource:
-        url: jdbc:postgresql:pdca
-        username: arium
-        password: qwerty14@$
+        url: jdbc:postgresql://${RDS_HOSTNAME:localhost}:${RDS_PORT:5432}/${RDS_DB_NAME:postgres}
+        username: ${RDS_USERNAME:postgres}
+        password: ${RDS_PASSWORD:pgpa55word}
     jmx:
         enabled: true
     flyway:
@@ -29,7 +29,7 @@ logging:
   pattern:
     console: "%d %-5level %logger : %msg%n"
   level:
-    ROOT: INFO
+    ROOT: DEBUG
     ua.pragmasoft: DEBUG
 # Server configuration
 server:
