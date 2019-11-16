@@ -30,10 +30,12 @@ Git info/plugin
 
 ## AWS Infrastructure
 
-1. IAM roles
-2. ssh keys
+1. IAM roles - service, instance
+2. ssh key
 3. VPC
-4. subnets
-5. NAT
+4. subnets, internet gateway, default route to gw in public subnet
+5. NAT instance - source/destination check, default route to nat in private subnet
 6. ECR repo
+7. S3 bucket for access logs - bucket policy
+8. us-east-1e does not support t3.xxx instances
 

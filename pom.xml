@@ -16,6 +16,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<maven.build.timestamp.format>yyyyMMdd'T'HHmmss'Z'</maven.build.timestamp.format>
 	</properties>
 
 	<dependencies>
@@ -70,19 +71,31 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+						<execution>
+							<goals>
+								<goal>build-info</goal>
+							</goals>
+						</execution>
+					</executions>
 			</plugin>
 			<plugin>
                 <groupId>com.google.cloud.tools</groupId>
-                <artifactId>jib-maven-plugin</artifactId>
-                <version>1.7.0</version>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>1.8.0</version>
                  <configuration>
                  	<from>
                  		<image>pragmasoft/spring-boot-jre:amazoncorretto-11</image>
                  	</from>
                     <to>
-                        <image>488285037276.dkr.ecr.us-east-1.amazonaws.com/air/greeter</image>
+						<image>488285037276.dkr.ecr.us-east-1.amazonaws.com/air/greeter:latest</image>
+						<tags>${git.commit.id.abbrev},${project.version},${maven.build.timestamp}</tags>
                     </to>
                     <container>
                     	<entrypoint>/jre/bin/java,-cp,/app/resources:/app/classes:/app/libs/*,ua.pragmasoft.jlinkplayground.JlinkPlaygroundApplication</entrypoint>
