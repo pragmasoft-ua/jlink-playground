@@ -26,7 +26,6 @@ Playground project of minimized packaging of spring boot application
 AWS config rules
 CDK
 https://habr.com/ru/company/hh/blog/450954/
-Git info/plugin
 
 ## AWS Infrastructure
 

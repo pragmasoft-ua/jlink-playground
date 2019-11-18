@@ -5,11 +5,17 @@
       "name": "greeter",
       "image": "488285037276.dkr.ecr.us-east-1.amazonaws.com/air/greeter",
       "essential": true,
-      "memoryReservation": 1536,
+      "memoryReservation": 1900,
       "portMappings": [
         {
           "hostPort": 80,
           "containerPort": 8080
+        }
+      ],
+      "environment": [
+        {
+          "name": "JAVA_TOOL_OPTIONS",
+          "value": "-XX:InitialRAMPercentage=75 -XX:MaxRAMPercentage=75 -XX:+AlwaysActAsServerClassMachine"
         }
       ]
     }
