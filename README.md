@@ -37,4 +37,7 @@ https://habr.com/ru/company/hh/blog/450954/
 6. ECR repo
 7. S3 bucket for access logs - bucket policy
 8. us-east-1e does not support t3.xxx instances
+9. use wildcard cert. 
+10. enable 443 port outbound on alb security group
+
 

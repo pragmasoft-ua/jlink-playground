@@ -42,18 +42,15 @@ management:
         web:
             base-path: /management
             exposure:
-                include: ["configprops", "env", "health", "info", "threaddump", "logfile", "jhi-metrics", "prometheus" ]
+                include: ["configprops", "env", "health", "info", "metrics", "mappings", "scheduledtasks", "threaddump", "prometheus" ]
     endpoint:
         health:
             show-details: when-authorized
-        jhi-metrics:
-            enabled: true
-    info:
-        git:
-            mode: full
-    health:
-        mail:
-            enabled: false # When using the MailService, configure an SMTP server and set this to true
+            mail:
+                enabled: false
+        info:
+            git:
+                mode: full
     metrics:
         export:
             # Prometheus is the default metrics backend
